@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SinavOlusturma.Models.ORM.Context;
 
 namespace SinavOlusturma.Migrations
 {
     [DbContext(typeof(ExamContext))]
-    partial class ExamContextModelSnapshot : ModelSnapshot
+    [Migration("20210210204030_QuestionAndExamTable")]
+    partial class QuestionAndExamTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
