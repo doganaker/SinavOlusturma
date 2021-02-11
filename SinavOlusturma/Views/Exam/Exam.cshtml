@@ -36,20 +36,20 @@
         <div class="row">
             <div class="col-md-5">
                 <p>1) @Model.Q1.QBody</p>
-                <div class="list-group" id="list-tab" role="tablist">
-                    <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">A) @Model.Q1.ChoiceA</a>
-                    <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">B) @Model.Q1.ChoiceA</a>
-                    <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">C) @Model.Q1.ChoiceA</a>
-                    <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">D) @Model.Q1.ChoiceA</a>
-                </div>
+                <ul class="list-group">
+                    <li class="list-group-item" id="a1">A) @Model.Q1.ChoiceA</li>
+                    <li class="list-group-item" id="b1">B) @Model.Q1.ChoiceB</li>
+                    <li class="list-group-item" id="c1">C) @Model.Q1.ChoiceC</li>
+                    <li class="list-group-item" id="d1">D) @Model.Q1.ChoiceD</li>
+                </ul>
             </div>
             <div class="col-md-5">
                 <p>2) @Model.Q2.QBody</p>
                 <ul class="list-group">
-                    <li class="list-group-item">A) @Model.Q2.ChoiceA</li>
-                    <li class="list-group-item">B) @Model.Q2.ChoiceB</li>
-                    <li class="list-group-item">C) @Model.Q2.ChoiceC</li>
-                    <li class="list-group-item">D) @Model.Q2.ChoiceD</li>
+                    <li class="list-group-item" id="a2">A) @Model.Q2.ChoiceA</li>
+                    <li class="list-group-item" id="b2">B) @Model.Q2.ChoiceB</li>
+                    <li class="list-group-item" id="c2">C) @Model.Q2.ChoiceC</li>
+                    <li class="list-group-item" id="d2">D) @Model.Q2.ChoiceD</li>
                 </ul>
             </div>
         </div>
@@ -58,19 +58,19 @@
             <div class="col-md-5">
                 <p>3) @Model.Q3.QBody</p>
                 <ul class="list-group">
-                    <li class="list-group-item">A) @Model.Q3.ChoiceA</li>
-                    <li class="list-group-item">B) @Model.Q3.ChoiceB</li>
-                    <li class="list-group-item">C) @Model.Q3.ChoiceC</li>
-                    <li class="list-group-item">D) @Model.Q3.ChoiceD</li>
+                    <li class="list-group-item" id="a3">A) @Model.Q3.ChoiceA</li>
+                    <li class="list-group-item" id="b3">B) @Model.Q3.ChoiceB</li>
+                    <li class="list-group-item" id="c3">C) @Model.Q3.ChoiceC</li>
+                    <li class="list-group-item" id="d3">D) @Model.Q3.ChoiceD</li>
                 </ul>
             </div>
             <div class="col-md-5">
                 <p>4) @Model.Q4.QBody</p>
                 <ul class="list-group">
-                    <li class="list-group-item">A) @Model.Q4.ChoiceA</li>
-                    <li class="list-group-item">B) @Model.Q4.ChoiceB</li>
-                    <li class="list-group-item">C) @Model.Q4.ChoiceC</li>
-                    <li class="list-group-item">D) @Model.Q4.ChoiceD</li>
+                    <li class="list-group-item" id="a4">A) @Model.Q4.ChoiceA</li>
+                    <li class="list-group-item" id="b4">B) @Model.Q4.ChoiceB</li>
+                    <li class="list-group-item" id="c4">C) @Model.Q4.ChoiceC</li>
+                    <li class="list-group-item" id="d4">D) @Model.Q4.ChoiceD</li>
                 </ul>
             </div>
         </div>
@@ -83,5 +83,16 @@
 </html>
 
 <script>
+    $(".list-group-item").click(function () {
+        var id = $(this).attr("id");
+        console.log(id);
+        if ($("#" + id).hasClass("active")) {
+            $("#" + id).removeClass("active");
+        }
+        else {
+            $(".list-group-item").removeClass("active");
+            $("#" + id).addClass("active");
+        }
 
+    })
 </script>
