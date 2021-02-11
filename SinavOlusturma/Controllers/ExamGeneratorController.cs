@@ -25,7 +25,7 @@ namespace SinavOlusturma.Controllers
         }
 
         [HttpPost]
-        public IActionResult Generator(List<QuestionVM> model,string titles,string[] rightChoice)
+        public IActionResult Generator(QuestionVM model,string titles,string[] rightChoice)
         {
 
             Exam exam = new Exam();
@@ -33,6 +33,9 @@ namespace SinavOlusturma.Controllers
             exam.ArticleTitle = titles;
             //exam.ArticleContent = content;
             //exam.QuestionID = 3;
+
+            _examContext.Exams.Add(exam);
+            _examContext.SaveChanges();
             
             return View();
         }

@@ -10,7 +10,7 @@ namespace SinavOlusturma.Models.ORM.Entities
     {
         public string ArticleTitle { get; set; }
         public string ArticleContent { get; set; }
-        public int QuestionID { get; set; }
+        public Nullable<int> QuestionID { get; set; }
 
         [ForeignKey("QuestionID")]
         public Question Question { get; set; }

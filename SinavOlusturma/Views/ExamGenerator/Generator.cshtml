@@ -1,4 +1,4 @@
-﻿@model List<SinavOlusturma.Models.VM.QuestionVM>
+﻿@model SinavOlusturma.Models.VM.QuestionVM
 
 <!DOCTYPE html>
 <html>
@@ -30,23 +30,23 @@
 
                     @for (int i = 1; i < 5; i++)
                     {
-                        @Html.TextBoxFor(q => q[i].QBody, new { @class="form-control",@placeholder="Soru " + i.ToString()})
+                        @Html.TextBoxFor(q => q.QBody, new { @class="form-control",@placeholder="Soru " + i.ToString()})
                         <br />
                         <div class="row">
                             <div class="col-md-6">
-                                @Html.TextBoxFor(q => q[i].ChoiceA, new { @class="form-control"})
+                                @Html.TextBoxFor(q => q.ChoiceA, new { @class="form-control"})
                             </div>
                             <div class="col-md-6">
-                                @Html.TextBoxFor(q => q[i].ChoiceB, new { @class = "form-control"})
+                                @Html.TextBoxFor(q => q.ChoiceB, new { @class = "form-control"})
                             </div>
                         </div>
                         <br />
                         <div class="row">
                             <div class="col-md-6">
-                                @Html.TextBoxFor(q => q[i].ChoiceC, new { @class = "form-control"})
+                                @Html.TextBoxFor(q => q.ChoiceC, new { @class = "form-control"})
                             </div>
                             <div class="col-md-6">
-                                @Html.TextBoxFor(q => q[i].ChoiceD, new { @class = "form-control"})
+                                @Html.TextBoxFor(q => q.ChoiceD, new { @class = "form-control"})
                             </div>
                         </div>
                         <br />

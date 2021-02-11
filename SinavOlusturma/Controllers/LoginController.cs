@@ -45,7 +45,7 @@ namespace SinavOlusturma.Controllers
 
                     await HttpContext.SignInAsync(principal);
 
-                    return RedirectToAction("ExamGenerator", "Generator");
+                    return RedirectToAction("Generator", "ExamGenerator");
                 }
                 else
                 {
