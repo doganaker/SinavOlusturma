@@ -143,38 +143,6 @@
                         <option value="D">D</option>
                     </select>
                     <br />
-
-                    @*@for (int i = 1; i < 5; i++)
-        {
-            @Html.TextBoxFor(q => q.QBody, new { @class="form-control",@placeholder="Soru " + i.ToString()})
-            <br />
-            <div class="row">
-                <div class="col-md-6">
-                    @Html.TextBoxFor(q => q.ChoiceA, new { @class="form-control"})
-                </div>
-                <div class="col-md-6">
-                    @Html.TextBoxFor(q => q.ChoiceB, new { @class = "form-control"})
-                </div>
-            </div>
-            <br />
-            <div class="row">
-                <div class="col-md-6">
-                    @Html.TextBoxFor(q => q.ChoiceC, new { @class = "form-control"})
-                </div>
-                <div class="col-md-6">
-                    @Html.TextBoxFor(q => q.ChoiceD, new { @class = "form-control"})
-                </div>
-            </div>
-            <br />
-            <select class="form-control col-md-4" name="rightChoice" style="margin-left:35%;">
-                <option value="null">--Doğru Cevap seç--</option>
-                <option value="A">A</option>
-                <option value="B">B</option>
-                <option value="C">C</option>
-                <option value="D">D</option>
-            </select>
-            <br />
-        }*@
                 </div>
             </div>
             <button class="btn btn-primary col-md-4" type="submit" style="margin-left:35%;">SINAV OLUŞTUR</button>
