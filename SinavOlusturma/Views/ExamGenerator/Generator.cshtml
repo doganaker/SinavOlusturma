@@ -28,37 +28,153 @@
             <div class="questionSheet">
                 <div class="form-group">
 
-                    @for (int i = 1; i < 5; i++)
-                    {
-                        @Html.TextBoxFor(q => q.QBody, new { @class="form-control",@placeholder="Soru " + i.ToString()})
-                        <br />
-                        <div class="row">
-                            <div class="col-md-6">
-                                @Html.TextBoxFor(q => q.ChoiceA, new { @class="form-control"})
-                            </div>
-                            <div class="col-md-6">
-                                @Html.TextBoxFor(q => q.ChoiceB, new { @class = "form-control"})
-                            </div>
+                    @Html.TextBoxFor(q => q.Q1.QBody, new { @class = "form-control", @placeholder = "Soru 1"})
+                    <br />
+                    <div class="row">
+                        <div class="col-md-6">
+                            @Html.TextBoxFor(q => q.Q1.ChoiceA, new { @class = "form-control" })
                         </div>
-                        <br />
-                        <div class="row">
-                            <div class="col-md-6">
-                                @Html.TextBoxFor(q => q.ChoiceC, new { @class = "form-control"})
-                            </div>
-                            <div class="col-md-6">
-                                @Html.TextBoxFor(q => q.ChoiceD, new { @class = "form-control"})
-                            </div>
+                        <div class="col-md-6">
+                            @Html.TextBoxFor(q => q.Q1.ChoiceB, new { @class = "form-control" })
                         </div>
-                        <br />
-                        <select class="form-control col-md-4" name="rightChoice" style="margin-left:35%;">
-                            <option value="null">--Doğru Cevap seç--</option>
-                            <option value="A">A</option>
-                            <option value="B">B</option>
-                            <option value="C">C</option>
-                            <option value="D">D</option>
-                        </select>
-                        <br />
-                    }
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-6">
+                            @Html.TextBoxFor(q => q.Q1.ChoiceC, new { @class = "form-control" })
+                        </div>
+                        <div class="col-md-6">
+                            @Html.TextBoxFor(q => q.Q1.ChoiceD, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <br />
+                    <select class="form-control col-md-4" name="rightChoice" style="margin-left:35%;">
+                        <option value="null">--Doğru Cevap seç--</option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                    </select>
+                    <br />
+
+                    @Html.TextBoxFor(q => q.Q2.QBody, new { @class = "form-control", @placeholder = "Soru 2"})
+                    <br />
+                    <div class="row">
+                        <div class="col-md-6">
+                            @Html.TextBoxFor(q => q.Q2.ChoiceA, new { @class = "form-control" })
+                        </div>
+                        <div class="col-md-6">
+                            @Html.TextBoxFor(q => q.Q2.ChoiceB, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-6">
+                            @Html.TextBoxFor(q => q.Q2.ChoiceC, new { @class = "form-control" })
+                        </div>
+                        <div class="col-md-6">
+                            @Html.TextBoxFor(q => q.Q2.ChoiceD, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <br />
+                    <select class="form-control col-md-4" name="rightChoice" style="margin-left:35%;">
+                        <option value="null">--Doğru Cevap seç--</option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                    </select>
+                    <br />
+
+                    @Html.TextBoxFor(q => q.Q3.QBody, new { @class = "form-control", @placeholder = "Soru 3"})
+                    <br />
+                    <div class="row">
+                        <div class="col-md-6">
+                            @Html.TextBoxFor(q => q.Q3.ChoiceA, new { @class = "form-control" })
+                        </div>
+                        <div class="col-md-6">
+                            @Html.TextBoxFor(q => q.Q3.ChoiceB, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-6">
+                            @Html.TextBoxFor(q => q.Q3.ChoiceC, new { @class = "form-control" })
+                        </div>
+                        <div class="col-md-6">
+                            @Html.TextBoxFor(q => q.Q3.ChoiceD, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <br />
+                    <select class="form-control col-md-4" name="rightChoice" style="margin-left:35%;">
+                        <option value="null">--Doğru Cevap seç--</option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                    </select>
+                    <br />
+
+                    @Html.TextBoxFor(q => q.Q4.QBody, new { @class = "form-control", @placeholder = "Soru 4"})
+                    <br />
+                    <div class="row">
+                        <div class="col-md-6">
+                            @Html.TextBoxFor(q => q.Q4.ChoiceA, new { @class = "form-control" })
+                        </div>
+                        <div class="col-md-6">
+                            @Html.TextBoxFor(q => q.Q4.ChoiceB, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-6">
+                            @Html.TextBoxFor(q => q.Q4.ChoiceC, new { @class = "form-control" })
+                        </div>
+                        <div class="col-md-6">
+                            @Html.TextBoxFor(q => q.Q4.ChoiceD, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <br />
+                    <select class="form-control col-md-4" name="rightChoice" style="margin-left:35%;">
+                        <option value="null">--Doğru Cevap seç--</option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                    </select>
+                    <br />
+
+                    @*@for (int i = 1; i < 5; i++)
+        {
+            @Html.TextBoxFor(q => q.QBody, new { @class="form-control",@placeholder="Soru " + i.ToString()})
+            <br />
+            <div class="row">
+                <div class="col-md-6">
+                    @Html.TextBoxFor(q => q.ChoiceA, new { @class="form-control"})
+                </div>
+                <div class="col-md-6">
+                    @Html.TextBoxFor(q => q.ChoiceB, new { @class = "form-control"})
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-6">
+                    @Html.TextBoxFor(q => q.ChoiceC, new { @class = "form-control"})
+                </div>
+                <div class="col-md-6">
+                    @Html.TextBoxFor(q => q.ChoiceD, new { @class = "form-control"})
+                </div>
+            </div>
+            <br />
+            <select class="form-control col-md-4" name="rightChoice" style="margin-left:35%;">
+                <option value="null">--Doğru Cevap seç--</option>
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+            </select>
+            <br />
+        }*@
                 </div>
             </div>
             <button class="btn btn-primary col-md-4" type="submit" style="margin-left:35%;">SINAV OLUŞTUR</button>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SinavOlusturma.Models.ORM.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,11 +8,9 @@ namespace SinavOlusturma.Models.VM
 {
     public class QuestionVM
     {
-        public string QBody { get; set; }
-        public string RightAnswer { get; set; }
-        public string ChoiceA { get; set; }
-        public string ChoiceB { get; set; }
-        public string ChoiceC { get; set; }
-        public string ChoiceD { get; set; }
+        public Question Q1 { get; set; }
+        public Question Q2 { get; set; }
+        public Question Q3 { get; set; }
+        public Question Q4 { get; set; }
     }
 }
