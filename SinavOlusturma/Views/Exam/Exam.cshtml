@@ -84,15 +84,43 @@
 
 <script>
     $(".list-group-item").click(function () {
-        var id = $(this).attr("id");
-        console.log(id);
-        if ($("#" + id).hasClass("active")) {
-            $("#" + id).removeClass("active");
-        }
-        else {
-            $(".list-group-item").removeClass("active");
-            $("#" + id).addClass("active");
-        }
+        $(this).parent().children().removeClass("active");
+        $(this).addClass("active");
+       
+    });
 
-    })
+    $(".submit").click(function () {
+
+        var examId = @Model.ID;
+
+        var url = "/Exam/Answers/" + examId;
+
+        var answerone = "";
+        var answertwo = "";
+        var answerthree = "";
+        var answerfour = "";
+
+        $.ajax({
+            type: "GET",
+            url: url,
+            async:false,
+            dataType: "json",
+            success: function (data) {
+                console.log(data);
+                answerone = data.answerOne;
+                answertwo = data.answerTwo;
+                answerthree = data.answerThree;
+                answerfour = data.answerFour;
+            }
+        });
+        var id1 = "#" + answerone.toLowerCase() + "1";
+        var id2 = "#" + answertwo.toLowerCase() + "2";
+        var id3 = "#" + answerthree.toLowerCase() + "3";
+        var id4 = "#" + answerfour.toLowerCase() + "4";
+
+        $(id1).css("background-color","red");
+        $(id2).css("background-color","red");
+        $(id3).css("background-color","red");
+        $(id4).css("background-color","red");
+    });
 </script>

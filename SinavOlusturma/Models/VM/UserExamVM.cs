@@ -8,6 +8,7 @@ namespace SinavOlusturma.Models.VM
 {
     public class UserExamVM
     {
+        public int ID { get; set; }
         public string ArticleTitle { get; set; }
         public string ArticleContent { get; set; }
         public Question Q1 { get; set; }

@@ -52,7 +52,17 @@
                         <td>@item.ID</td>
                         <td><a href="/Exam/Exam/@item.ID">@item.ArticleTitle</a></td>
                         <td>@item.AddDate</td>
-                        <td><button class="btn btn-danger delete" id="@item.ID">Sil</button></td>
+                        <td>
+                            <span id="confirmDeleteSpan_@item.ID" style="display:none">
+                                <span>Silme işlemini onaylıyor musun?</span>
+                                <button type="submit" class="btn btn-outline-success delete" id="@item.ID">Evet</button>
+                                <a href="#" class="btn btn-outline-danger" onclick="confirmDelete('@item.ID',false)">Hayır</a>
+                            </span>
+
+                            <span id="deleteSpan_@item.ID">
+                                <a href="#" class="btn btn-outline-danger" onclick="confirmDelete('@item.ID',true)"><i class="material-icons">Sil</i></a>
+                            </span>
+                        </td>
                     </tr>
                 }
             </tbody>
@@ -61,6 +71,22 @@
 </body>
 </html>
 
+
+<script>
+    function confirmDelete(Id, isTrue) {
+        var deleteSpan = 'deleteSpan_' + Id;
+        var confirmDeleteSpan = 'confirmDeleteSpan_' + Id;
+
+        if (isTrue) {
+            $('#' + deleteSpan).hide();
+            $('#' + confirmDeleteSpan).show();
+        }
+        else {
+            $('#' + deleteSpan).show();
+            $('#' + confirmDeleteSpan).hide();
+        }
+    }
+</script>
 <script>
     $(document).on("click", ".delete", function () {
         let id = $(this).attr("id");

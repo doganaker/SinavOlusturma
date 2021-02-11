@@ -22,7 +22,8 @@ namespace SinavOlusturma.Controllers
         {
             UserExamVM userExam = new UserExamVM();
             Exam exam = _examContext.Exams.Include(q => q.QuestionOne).Include(q => q.QuestiontWO).Include(q => q.QuestionThree).Include(q => q.QuestionFour).FirstOrDefault(x => x.ID == id && x.IsDeleted == false);
-            
+
+            userExam.ID = exam.ID;
             userExam.ArticleTitle = exam.ArticleTitle;
             //userExam.ArticleContent = content;
             userExam.Q1 = exam.QuestionOne;
@@ -35,8 +36,15 @@ namespace SinavOlusturma.Controllers
 
         public IActionResult Answers(int id)
         {
-            Question question = _examContext.Questions.Find(id);
-            return Json(question);
+            AnswerVM userExam = new AnswerVM();
+            Exam exam = _examContext.Exams.Include(q => q.QuestionOne).Include(q => q.QuestiontWO).Include(q => q.QuestionThree).Include(q => q.QuestionFour).FirstOrDefault(x => x.ID == id && x.IsDeleted == false);
+
+            userExam.AnswerOne = exam.QuestionOne.RightAnswer;
+            userExam.AnswerTwo = exam.QuestiontWO.RightAnswer;
+            userExam.AnswerThree = exam.QuestionThree.RightAnswer;
+            userExam.AnswerFour = exam.QuestionFour.RightAnswer;
+
+            return Json(userExam);
         }
 
     }
